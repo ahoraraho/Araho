@@ -1,0 +1,302 @@
+/************************************/
+/*              LAYOUT              */
+/************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+/*Importan*/
+a {
+  text-decoration: none !important;
+  text-align: center;
+  /*padding: 10px;*/
+}
+
+li,
+ul {
+  list-style: none !important;
+}
+
+h3,
+h4 {
+  text-align: center;
+  color: #ff0000;
+  padding-right: 10px;
+}
+
+body {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  display: grid;
+  /*para que el footer siempre este abajo de la pagina*/
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body a {
+  color: rgba(56, 104, 182, 0.146);
+}
+
+main {
+  height: 100fr;
+  width: 100%;
+}
+
+table .my-signature {
+  width: 500px !important;
+  height: auto;
+}
+
+main .conten,
+main .contenr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  font-size: 14px;
+  margin: 0px 0px 8px;
+}
+
+/*TABLA*/
+table {
+  table-layout: auto;
+  margin-bottom: 0px;
+  font-family: arial;
+  border-collapse: initial;
+  height: 100px;
+  padding: 25px;
+  background-color: rgb(10, 22, 49);
+  border: 1px solid rgb(255, 253, 253);
+  border-radius: 20px;
+}
+
+
+/*BOTONES DE LAS REDES SOCIALES*/
+.btn {
+  color: rgb(255, 255, 255);
+  margin-right: 8px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.b-fac {
+  color: rgb(9, 117, 240);
+}
+
+.b-linke {
+  color: #0A66C2;
+}
+
+.b-twi {
+  color: #1a8cd8;
+}
+
+.b-wha {
+  color: rgb(46, 195, 13);
+}
+
+.b-git {
+  color: rgb(255, 255, 255);
+}
+
+.b-tel {
+  color: #64bbf7;
+}
+
+/*DATOS*/
+.dd {
+  margin-bottom: 4px;
+  font-size: 15px;
+  line-height: 24px;
+  height: 24px;
+  display: block;
+  text-align: left;
+  cursor: pointer;
+}
+
+.d-tel {
+  color: #1eff00;
+}
+
+.d-loc {
+  color: #ed0000;
+}
+
+.d-web {
+  color: #3d71cb;
+}
+
+/*SEPARADOR*/
+.color-signature {
+  width: 4px;
+  height: 85px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  background-color: yellow;
+  border: 2px solid yellow;
+  margin: auto 15px;
+}
+
+.btn-a-copiar {
+  cursor: pointer;
+  font-size: large;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px !important;
+  background-image: linear-gradient(270deg,
+      #863a46 0,
+      #863b3f 3.85%,
+      #843d37 7.69%,
+      #823f31 11.54%,
+      #7f422a 15.38%,
+      #7a4525 19.23%,
+      #764820 23.08%,
+      #704b1c 26.92%,
+      #6a4d18 30.77%,
+      #645017 34.62%,
+      #5d5317 38.46%,
+      #555518 42.31%,
+      #4d571b 46.15%,
+      #45591f 50%,
+      #3c5b24 53.85%,
+      #325c2a 57.69%,
+      #275d31 61.54%,
+      #185e38 65.38%,
+      #005f3f 69.23%,
+      #006047 73.08%,
+      #00604f 76.92%,
+      #006057 80.77%,
+      #00605f 84.62%,
+      #006067 88.46%,
+      #00606e 92.31%,
+      #005f75 96.15%,
+      #005e7b 100%);
+  width: auto;
+  color: white;
+}
+
+.btn-a-copiar:hover {
+  font-size: large;
+  margin: 10px;
+  padding: 10px;
+  color: #000000;
+  background-image: linear-gradient(75deg,
+      #fae8d3 0,
+      #f6e9d3 3.33%,
+      #f3ebd3 6.67%,
+      #efecd3 10%,
+      #ecedd4 13.33%,
+      #e8eed6 16.67%,
+      #e4efd7 20%,
+      #e0efd9 23.33%,
+      #ddf0dc 26.67%,
+      #daf1df 30%,
+      #d6f1e2 33.33%,
+      #d4f2e5 36.67%,
+      #d1f2e8 40%,
+      #cff2eb 43.33%,
+      #cef2ef 46.67%,
+      #cdf2f2 50%,
+      #cdf2f5 53.33%,
+      #cdf1f8 56.67%,
+      #cef1fb 60%,
+      #d0f0fd 63.33%,
+      #d2efff 66.67%,
+      #d4efff 70%,
+      #d7eeff 73.33%,
+      #dbedff 76.67%,
+      #dfecff 80%,
+      #e3ebff 83.33%,
+      #e7eaff 86.67%,
+      #ebe8ff 90%,
+      #efe7ff 93.33%,
+      #f3e6fd 96.67%,
+      #f6e5fb 100%);
+}
+
+/************************************/
+/*          CONTENEDORES            */
+/************************************/
+.center-small {
+  margin: 10px;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.information {
+  text-align: left;
+  background: none;
+  padding: 0px 14px 0px 8px;
+  min-width: 175px;
+  height: auto;
+  position: relative;
+}
+
+.avatar {
+  padding: 0px;
+  background: none;
+  margin-right: 8px;
+}
+
+.datos {
+  padding: 0px;
+  background: none;
+  margin-right: 8px;
+}
+
+/*DATOS*/
+
+
+/*IMAGEN LOGO*/
+.img-logo {
+  width: 100px;
+  height: 100px;
+  display: block;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  float: right;
+  border: solid 1px rgb(255, 255, 255);
+}
+
+/*NOMBRE*/
+.nombre {
+  color: rgb(0, 251, 255);
+  border-bottom: #000000;
+  border: 1px coral;
+  font-size: 30px;
+  position: absolute;
+  top: 4px;
+  left: 12px;
+}
+
+.descripcion {
+  color: rgb(162, 0, 255);
+  position: absolute;
+  top: 44px;
+  left: 7px;
+}
+
+.sociales {
+  position: absolute;
+  bottom: 10px;
+  left: 55px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,331 @@
+/*   color variables */
+$clr-primary: #244969;
+$clr-primary-hover: #02d5ff;
+$clr-primary-dark: #1c5c43;
+$clr-primary-light: #c7f5ff;
+$clr-gray100: #f0f7f8;
+$clr-gray200: #040404;
+$clr-gray300: #a7b7be;
+$clr-gray400: #6b7e86;
+$clr-gray500: #425a65;
+
+//COLORS
+
+$white: #fff;
+$black: #666;
+$grey: #e5e5e5;
+$green: #49b35e;
+$red: #f43f31;
+
+$blanco: #ffffff;
+$negro: #000000;
+$amarillo: #fff200;
+$rojo: #ff0000;
+
+$registro: #00eaff;
+$registro-hover: #00ffae;
+
+/*   border radius */
+$radius: 8px;
+
+/*letra en negrita*/
+$negrita: bold;
+
+h1 {
+  color: $clr-primary;
+  text-align: center;
+}
+
+sup {
+  color: $red;
+  margin-left: 4px;
+  //opacity: 100%;
+  display: none;
+}
+
+.form {
+  max-width: 100%;
+  padding: 0;
+  border-radius: $radius;
+  background-color: $blanco;
+
+  &_title {
+    margin-bottom: 0.5rem;
+  }
+
+  &_description {
+    margin-bottom: 2rem;
+  }
+
+  &_group {
+    position: relative;
+    height: 49px;
+    margin-bottom: 1.2rem;
+  }
+
+  &_group_max {
+    position: relative;
+    height: 150px;
+    margin-bottom: 1.2rem;
+  }
+
+  @mixin radio-color {
+    width: 100%;
+    height: 100%;
+    border: 2px solid $clr-gray200;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    outline: none;
+    padding: 15px !important;
+    background: none;
+
+    &:hover {
+      border: solid 1px $clr-primary-dark;
+      //box-shadow: 0px 0px 0px 2px $clr-primary ;
+    }
+
+    &:focus {
+      border: solid 2px $clr-primary-dark;
+      //box-shadow: 0px 0px 0px 2px $clr-primary-dark ;
+    }
+  }
+
+  &_input {
+    @include radio-color;
+  }
+
+  &_input_textarea {
+    @include radio-color;
+    padding: 15px !important;
+  }
+
+  &_label {
+    position: absolute;
+    left: 0.7rem;
+    top: 29px;
+    padding: 0 0.5rem;
+    background-color: white;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+
+    &>span {
+      margin: 0 auto 0 8px;
+    }
+  }
+
+  &_view_pass {
+    text-align: left;
+    color: $negro;
+    margin: 30px auto 20px;
+
+    &:hover {
+      color: #115389;
+    }
+  }
+
+  &_login {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    padding: 0.75rem 2rem;
+    background-color: $clr-primary;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: large;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: $amarillo;
+    transition: background-color 400ms ease-in;
+
+    &:hover {
+      background-color: $clr-primary-dark;
+      font-weight: $negrita;
+    }
+  }
+
+  &_singup {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    padding: 0.75rem 2rem;
+    background-color: $registro;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: large;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: $negro;
+    transition: background-color 400ms ease-in;
+
+    &:hover {
+      background-color: $registro-hover;
+      font-weight: $negrita;
+    }
+  }
+}
+
+/* 
+1. When the input is in the focus state
+reduce the size of the label and move upwards 
+
+2. Keep label state when content is in input field 
+*/
+@mixin label_superior {
+  top: 7px;
+  left: 0.8rem;
+  font-size: 0.8rem;
+  color: $clr-primary-dark;
+  //font-weight: $negrita;
+  border-radius: $radius;
+  padding: 0px auto;
+  margin: 0;
+  //border: solid 1px $clr-primary;
+  //opacity: 50%;
+}
+
+.form_input:focus~.form_label,
+.form_input:not(:placeholder-shown).form_input:not(:focus)~.form_label {
+  @include label_superior;
+}
+
+.form__input_textarea:focus~.form_label,
+.form__input_textarea:not(:placeholder-shown).form__input_textarea:not(:focus)~.form_label {
+  @include label_superior;
+}
+
+
+
+//estilo del chec box
+.control {
+  font-family: arial;
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 5px;
+  padding-top: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control_indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #01f3a200;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  border: solid 1px $negro;
+}
+
+.control:hover input~.control_indicator,
+.control input:focus~.control_indicator {
+  background: #cccccc;
+}
+
+.control input:checked~.control_indicator {
+  background: #2a4c72;
+}
+
+.control:hover input:not([disabled]):checked~.control_indicator,
+.control input:checked:focus~.control_indicator {
+  background: $clr-primary;
+}
+
+.control input:disabled~.control_indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.control_indicator:after {
+  box-sizing: unset;
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.control input:checked~.control_indicator:after {
+  display: block;
+}
+
+.control-checkbox .control_indicator:after {
+  left: 6px;
+  top: 3px;
+  width: 3px;
+  height: 8px;
+  border: solid $amarillo;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.control-checkbox .control_indicator::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
+  background: $clr-primary;
+  border-radius: 3rem;
+  opacity: 0.6;
+  z-index: 99999;
+  transform: scale(0);
+}
+
+@keyframes s-ripple {
+  0% {
+    transform: scale(0);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes s-ripple-dup {
+  0% {
+    transform: scale(0);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.control-checkbox input+.control_indicator::before {
+  animation: s-ripple 250ms ease-out;
+}
+
+.control-checkbox input:checked+.control_indicator::before {
+  animation-name: s-ripple-dup;
+}
