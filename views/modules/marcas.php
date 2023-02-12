@@ -90,8 +90,8 @@ if (isset($_GET['msj'])) {
                     <td><?= $id ?></td>
                     <td><?= $nombre ?></td>
                     <td>
-                        <a href="?menu=panel&modulo=marca&action=update&id=<?= $id ?>" title="Modificar"><i class="bi bi-pencil-square" style="color:rgb(32, 55, 96);font-size: 30px; margin-right: 20px;"><b> </i></a>
-                        <a href="?menu=panel&modulo=marca&action=delete&id=<?= $id ?>" title="Eliminar"><i class="bi bi-trash" width="30" height="30" style="color: red; font-size: 30px;;"><b></i></a>
+                        <a href="?menu=panel&modulo=marca&action=update&id=<?= $id ?>" title="Modificar"><i class="edid bi-pencil-square"><b> </i></a>
+                        <a href="?menu=panel&modulo=marca&action=delete&id=<?= $id ?>" title="Eliminar"><i class="delete bi-trash"><b></i></a>
                     </td>
                 </tr>
             <?php } ?>

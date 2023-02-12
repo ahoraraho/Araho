@@ -484,7 +484,6 @@ input[type="file"] {
     border-radius: 20px;
 }
 
-
 .contenido-tabla .resp input[type="checkbox"] {
     display: none;
 }
@@ -501,6 +500,40 @@ input[type="file"] {
 .contenido-tabla .resp a p {
     font-size: 11px;
     color: var(--text-color);
+}
+
+.contenido-tabla .resp img {
+    max-width:100px;
+    border-radius: 10px;
+}
+
+.contenido-tabla table .edid,
+.contenido-tabla table .ok,
+.contenido-tabla table .nok,
+.contenido-tabla table .delete {
+    margin: 0;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.contenido-tabla table .edid {
+    margin-right: 20px;
+    color: rgb(13, 57, 133);
+}
+
+.contenido-tabla table .delete {
+    color: rgb(180, 6, 6);
+}
+
+
+.contenido-tabla table .ok {
+    margin-right: 20px;
+    color: rgb(75, 192, 29);
+}
+
+.contenido-tabla table .nok {
+    color: rgb(71, 56, 146);
 }
 
 /*BOTON DE AGREGAR MAS ...*/
@@ -812,7 +845,7 @@ option {
     /* ruta */
 
     .ruta a {
-        
+
         font-family: cursive;
         padding: 10px 11px 10px 0px;
         font-size: 12px;

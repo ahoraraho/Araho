@@ -137,8 +137,8 @@ if (!empty($productosVentas)) {
                         }
                         ?>
                         <td>
-                            <a href="?menu=panel&modulo=ventas&action=entregado&idVenta=<?= $idVenta ?>" title="Entregado"><i class="bi bi-bag-check-fill" style="color:limegreen; padding:5px; font-size: 30px; text-align:center;"></i></a>
-                            <a href="?menu=panel&modulo=ventas&action=porentregar&idVenta=<?= $idVenta ?>" title="Por Entregar"><i class="bi bi-hourglass-split" style="color:slateblue; padding:5px; font-size: 30px; text-align:center;"></i></a>
+                            <a href="?menu=panel&modulo=ventas&action=entregado&idVenta=<?= $idVenta ?>" title="Entregado"><i class="ok bi-bag-check-fill" ></i></a>
+                            <a href="?menu=panel&modulo=ventas&action=porentregar&idVenta=<?= $idVenta ?>" title="Por Entregar"><i class="nok bi-hourglass-split"></i></a>
                         </td>
                     </tr>
                 <?php   } ?>

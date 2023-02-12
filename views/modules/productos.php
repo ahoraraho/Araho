@@ -218,9 +218,9 @@ if (isset($_GET['msj'])) {
             ?>
                 <tr>
                     <?php if (!empty($imagen)) : ?>
-                        <td><img style="max-width:100px" src="img/productos/<?= $imagen ?>" alt="<?= $nombre ?>"></td>
+                        <td><img src="img/productos/<?= $imagen ?>" alt="<?= $nombre ?>"></td>
                     <?php else : ?>
-                        <td><img style="max-width:100px" src="img/pemtry.png"></td>
+                        <td><img src="img/pemtry.png"></td>
                     <?php endif; ?>
                     <td><?= $nombre ?></td>
                     <td>S/. <?= $precio ?></td>
@@ -243,8 +243,8 @@ if (isset($_GET['msj'])) {
                         <input type="checkbox" <?= $status ?> name="status" value="destacado" id="destacado">
                     </td>
                     <td>
-                        <a href="?menu=panel&modulo=producto&action=update&id=<?= $id ?>" title="Modificar"><i class="bi bi-pencil-square" style="color:#0d4ba1; font-size: 30px; margin-right: 20px;"><b> </i></a>
-                        <a href="?menu=panel&modulo=producto&action=delete&id=<?= $id ?>" title="Eliminar"><i class="bi bi-trash" style="color: red; font-size: 30px;"><b></i></a>
+                        <a href="?menu=panel&modulo=producto&action=update&id=<?= $id ?>" title="Modificar"><i class="edid bi-pencil-square" ><b> </i></a>
+                        <a href="?menu=panel&modulo=producto&action=delete&id=<?= $id ?>" title="Eliminar"><i class="delete bi-trash" ><b></i></a>
                     </td>
                 </tr>
             <?php } ?>

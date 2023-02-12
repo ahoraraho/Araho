@@ -119,7 +119,7 @@ if (isset($_GET['msj'])) {
                     <td><?= $telefono ?></td>
                     <td><?= $email ?></td>
                     <td>
-                        <a href="?menu=panel&modulo=usuario&action=update&id=<?= $id ?>" title="Ver"><i class="bi bi-binoculars" style="color:rgb(32, 55, 96);font-size: 30px; margin-right: 20px;"><b> </i></a>
+                        <a href="?menu=panel&modulo=usuario&action=update&id=<?= $id ?>" title="Ver"><i class="edid bi-binoculars"><b> </i></a>
                     </td>
                 </tr>
             <?php } ?>
