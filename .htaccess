@@ -1,0 +1,27 @@
+# Redirigir una peticion http a https
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:CF-Visitor} !{"scheme":"https"}
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+# Impedir el acceso directo a los archivos
+RewriteEngine On
+RewriteRule ^config/ - [F,L]
+#RewriteRule ^css/ - [F,L]
+RewriteRule ^db/ - [F,L]
+#RewriteRule ^functions/ - [F,L]
+#RewriteRule ^img/ - [F,L]
+#RewriteRule ^js/ - [F,L]
+RewriteRule ^library/ - [F,L]
+#RewriteRule ^svgs/ - [F,L]
+RewriteRule ^views/ - [F,L]
+
+# Permitir el acceso a un archivo específico dentro de includes
+# RewriteEngine On
+# RewriteRule ^includes/(inside.css)$ - [L]
+# RewriteRule ^includes/(main.css)$ - [L]
+# RewriteRule ^includes/(nav.css)$ - [L]
+# RewriteRule ^includes/(style.css)$ - [L]
+# RewriteRule ^css/ - [F,L]
