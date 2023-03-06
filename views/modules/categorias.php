@@ -49,9 +49,9 @@ if (isset($_GET['msj'])) {
 <div class="numm">
     <div class="f1">
         <form class="from_input" action="" method="GET">
-            <!-- para agregar la vista de ?menu=productos en la url -->
-            <input type="hidden" name="menu" value="panel">
-            <input type="hidden" name="modulo" value="categorias">
+            <!-- para agregar la vista de ?m=productos en la url -->
+            <input type="hidden" name="m" value="panel">
+            <input type="hidden" name="mod" value="categorias">
             <!-- concatenando el valor a buscar -->
             <input type="text" name="buscar" value="" placeholder="Buscar...">
             <!-- <input type="submit" value="BUSCAR"> -->
@@ -60,7 +60,7 @@ if (isset($_GET['msj'])) {
         <span class="f-s"><?= $cantidad_categorias ?> </span>
     </div>
     <div class="f2">
-        <a href="?menu=panel&modulo=categoria&action=add" class="button-link btn-new f-e">
+        <a href="?m=panel&mod=categoria&action=add" class="button-link btn-new f-e">
             <i class="abi bi bi-plus-square"></i><span>Nueva categoria</span>
         </a>
     </div>
@@ -92,8 +92,8 @@ if (isset($_GET['msj'])) {
                     <td><?= $nombre ?></td>
                     <td><?= $hijo_de ?></td>
                     <td>
-                        <a href="?menu=panel&modulo=categoria&action=update&id=<?= $id ?>" title="Modificar"><i class="edid bi-pencil-square"><b> </i></a>
-                        <a href="?menu=panel&modulo=categoria&action=delete&id=<?= $id ?>" title="Eliminar"><i class="delete bi-trash"><b></i></a>
+                        <a href="?m=panel&mod=categoria&action=update&id=<?= $id ?>" title="Modificar"><i class="edid bi-pencil-square"><b> </i></a>
+                        <a href="?m=panel&mod=categoria&action=delete&id=<?= $id ?>" title="Eliminar"><i class="delete bi-trash"><b></i></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -103,8 +103,8 @@ if (isset($_GET['msj'])) {
 <div class="piePagina">
     <div class="derecha">
         <form class="num_paginas--filtro" action="" method="GET">
-            <input type="hidden" name="menu" value="panel">
-            <input type="hidden" name="modulo" value="categorias">
+            <input type="hidden" name="m" value="panel">
+            <input type="hidden" name="mod" value="categorias">
             <input type="hidden" name="buscar" value="<?= $filtro ?>">
             <input type="hidden" name="orden" value="<?= $orden ?>">
             <select class="form-select" name="limite">

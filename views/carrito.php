@@ -4,14 +4,14 @@ if (!isset($_SESSION["Usuario"])) { ?>
     <div class="conten">
         <div class="center-small">
             <h3>Debes iniciar sesión para poder ver el carrito!</h3>
-            <a style="width: 100%;" class="form_login" href="./?menu=ingreso">Iniciar sesión</a>
+            <a style="width: 100%;" class="form_login" href="./?m=ingreso">Iniciar sesión</a>
         </div>
     </div>
 <?php } else { ?>
     <?php
     // Si es administrador no va a comprar
     if ($_SESSION["Usuario"]["Administrador"] == 1) {
-        header('location: ?menu=panel&modulo=ventas');
+        header('location: ?m=panel&mod=ventas');
         die();
     }
     $usuario = $_SESSION["Usuario"];
@@ -25,7 +25,7 @@ if (!isset($_SESSION["Usuario"])) { ?>
         }
         if (isset($_POST['comprar'])) {
             if ($_POST["isValidBuy"]) {
-                header('location: ?menu=checkOut');
+                header('location: ?m=checkOut');
             } else {
                 alertaResponDialog("msj-error", "No se puede comprar porque no hay stock", "bi-wrench-adjustable-circle");
             }
@@ -37,7 +37,7 @@ if (!isset($_SESSION["Usuario"])) { ?>
         $idProducto = $_GET["idProduct"];
         DeleteCarritoProduct($idCliente, $idProducto);
         alertaResponDialog("msj-warning", "Producto quitado", "bi-exclamation-circle");
-        //header('location: ?menu=carrito');
+        //header('location: ?m=carrito');
     }
 
     $productosCarrito = SelectCarrito($idCliente);
@@ -93,7 +93,7 @@ if (!isset($_SESSION["Usuario"])) { ?>
                                     <td>S/. <?= $precio ?></td>
                                     <td>S/. <?= $precioParcial ?></td>
                                     <td>
-                                        <a href="?menu=carrito&action=quitar&idProduct=<?= $idProducto ?>" title="Eliminar"><i class="bi bi-trash3" style="color:crimson; font-size: 30px;"></i></a>
+                                        <a href="?m=carrito&action=quitar&idProduct=<?= $idProducto ?>" title="Eliminar"><i class="bi bi-trash3" style="color:crimson; font-size: 30px;"></i></a>
                                     </td>
                                     <?php
                                     if ($sinStock) :

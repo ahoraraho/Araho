@@ -7,7 +7,7 @@ if (!isset($_SESSION["Usuario"])) {
 // recupero el id del usuario que inicio la sesion
 $id = $_SESSION["Usuario"]["Id"];
 
-// Valido que tipo de peticion invoca al modulo
+// Valido que tipo de peticion invoca al mod
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Aca se deben procesar los datos del formulario ejecutado
     $user = array(
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "Administrador" => $user['Rol']
             );
         }
-        header('location: ?menu=panel&modulo=cuenta&msj=' . $msj);
+        header('location: ?m=panel&mod=cuenta&msj=' . $msj);
     }
     if (isset($_POST['delete'])) {
         $msj = "0x1000";
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_destroy();
             header('location: ./');
         }
-        header('location: ?menu=panel&modulo=cuenta&msj=' . $msj);
+        header('location: ?m=panel&mod=cuenta&msj=' . $msj);
     }
 } else {
     $user = SelectUsuario($id);
@@ -98,12 +98,12 @@ if (isset($_GET['msj'])) {
 
             </div>
             <div class="f2">
-                <a href="?menu=panel&modulo=cuentaReset" class="button-link f-e">
+                <a href="?m=panel&mod=cuentaReset" class="button-link f-e">
                     <i class="abi bi bi-gear-wide-connected"></i><span>Cambiar contraseña</span>
                 </a>
             </div>
         </div>
-        <form action="?menu=panel&modulo=cuenta" method="POST">
+        <form action="?m=panel&mod=cuenta" method="POST">
             <input type="hidden" name="id" value="<?= $id ?>">
             <input type="hidden" name="rol" value="<?= $rol ?>">
             <input type="hidden" name="idCliente" value="<?= $idCliente ?>">

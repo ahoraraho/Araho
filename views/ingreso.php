@@ -55,7 +55,7 @@ if (isset($_POST['login'])) {
 				"Administrador" => $usuario['Rol']
 			);
 			if ($usuario['Rol']) {
-				header("location: ?menu=panel&modulo=productos");
+				header("location: ?m=panel&mod=productos");
 			} else {
 				header("location: ./");
 			}
@@ -89,8 +89,8 @@ if (isset($_POST['login'])) {
 			</div>
 			<button name="login" class="form_login">Sing In</button>
 		</form><br>
-		<a class="crear-cuenta" href="?menu=reset">¿Olvidaste tu contraseña?</a>
+		<a class="crear-cuenta" href="?m=reset">¿Olvidaste tu contraseña?</a>
 		<p class="nuevo-usuario">¿No tiene una cuenta?</p>
-		<a href="?menu=registro"><button class="form_singup">New Sign Up</button></a>
+		<a href="?m=registro"><button class="form_singup">New Sign Up</button></a>
 	</div>
 </div>

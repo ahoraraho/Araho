@@ -62,13 +62,13 @@ if (!empty($productosVentas)) {
     switch ($action) {
         case 'porentregar':
             UpdateVentaEstado($idVenta, 'por entregar');
-            //header('location: ?menu=panel&modulo=ventas');
+            //header('location: ?m=panel&mod=ventas');
             alertaResponDialog("msj-warning", "Estado del producto, por entregar", "bi-exclamation-circle");
             break;
 
         case 'entregado':
             UpdateVentaEstado($idVenta, 'entregado');
-            //header('location: ?menu=panel&modulo=ventas');
+            //header('location: ?m=panel&mod=ventas');
             alertaResponDialog("msj-ok", "Estado del producto, entregado", "bi-check-circle");
             break;
     }
@@ -137,8 +137,8 @@ if (!empty($productosVentas)) {
                         }
                         ?>
                         <td>
-                            <a href="?menu=panel&modulo=ventas&action=entregado&idVenta=<?= $idVenta ?>" title="Entregado"><i class="ok bi-bag-check-fill" ></i></a>
-                            <a href="?menu=panel&modulo=ventas&action=porentregar&idVenta=<?= $idVenta ?>" title="Por Entregar"><i class="nok bi-hourglass-split"></i></a>
+                            <a href="?m=panel&mod=ventas&action=entregado&idVenta=<?= $idVenta ?>" title="Entregado"><i class="ok bi-bag-check-fill" ></i></a>
+                            <a href="?m=panel&mod=ventas&action=porentregar&idVenta=<?= $idVenta ?>" title="Por Entregar"><i class="nok bi-hourglass-split"></i></a>
                         </td>
                     </tr>
                 <?php   } ?>
@@ -156,8 +156,8 @@ if (!empty($productosVentas)) {
 <div class="piePagina">
     <div class="derecha">
         <form class="num_paginas--filtro" action="" method="GET">
-            <input type="hidden" name="menu" value="panel">
-            <input type="hidden" name="modulo" value="ventas">
+            <input type="hidden" name="m" value="panel">
+            <input type="hidden" name="mod" value="ventas">
             <input type="hidden" name="buscar" value="<?= $filtro ?>">
             <input type="hidden" name="orden" value="<?= $orden ?>">
             <select class="form-select" name="limite">

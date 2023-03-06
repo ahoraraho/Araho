@@ -11,7 +11,7 @@ if (isset($_GET["action"])) {
     $action = "add";
 }
 
-// Valido que tipo de peticion invoca al modulo
+// Valido que tipo de peticion invoca al mod
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Aca se deben procesar los datos del formulario ejecutado
     $id = $_POST["id"];
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             break;
     }
-    header('location: ?menu=panel&modulo=productos&msj=' . $msj);
+    header('location: ?m=panel&mod=productos&msj=' . $msj);
 } else {
     // Preparar el formulario para: Agregar - Modificar - Eliminar
     switch ($action) {
@@ -135,7 +135,7 @@ switch ($btn) {
 ?>
 <div class="ruta">
     <a href="./" title="Home"><i class="bi bi-house"></i> Home</a>
-    <a href="?menu=panel&modulo=productos" title="Ir a Productos"><i class="bi bi-box-seam"></i> Productos</a>
+    <a href="?m=panel&mod=productos" title="Ir a Productos"><i class="bi bi-box-seam"></i> Productos</a>
     <a href="#" title="Estas justo aqui" class="active"><i class="<?= $icono ?>"></i> <?= $hacer ?></a>
 </div>
 <div class="formularios">
@@ -143,7 +143,7 @@ switch ($btn) {
         <h3>Producto</h3>
         <div class="main">
             <div class="form">
-                <form action="?menu=panel&modulo=producto&action=<?= $action ?>" method="POST" enctype="multipart/form-data">
+                <form action="?m=panel&mod=producto&action=<?= $action ?>" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= $producto["idProducto"] ?>">
                     <input type="hidden" name="imgAgtual" value="<?= $producto["Imagen"] ?>">
 
@@ -153,7 +153,7 @@ switch ($btn) {
                     <input required type="text" name="nombre" value="<?= $producto["Nombre"] ?>" <?= $status ?>>
                     <i class="bi bi-cash-coin"></i><span>Precio S/.</span>
                     <input required type="number" min="0" step="0.5" name="precio" value="<?= $producto["Precio"] ?>" <?= $status ?>>
-                    <i class="bi bi-menu-button-fill"></i><span> Marca </span>
+                    <i class="bi bi-m-button-fill"></i><span> Marca </span>
                     <select name="marca" required <?= $status; ?>>
                         <option value="">Elija una marca...</option>
                         <?php

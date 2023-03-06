@@ -1,7 +1,7 @@
 <?php
 // Si es administrador no va a comprar
 if (isset($_SESSION["Usuario"]) && $_SESSION["Usuario"]["Administrador"] == 1) {
-    header('location: ?menu=panel&modulo=ventas');
+    header('location: ?m=panel&mod=ventas');
 }
 
 list($filtro, $pagina, $orden, $categoria, $marca, $limite) = getFiltroPaginaOrdenCategoriaLimite();
@@ -10,7 +10,7 @@ $cantidad_productos = countProductos($filtro);
 
 $paginas_total = ceil($cantidad_productos / $limite);
 
-$urlProductosFiltrado = "?menu=productos&limite=" . $limite . "&pag=" . $pagina . "&buscar=" . $filtro;
+$urlProductosFiltrado = "?m=productos&limite=" . $limite . "&pag=" . $pagina . "&buscar=" . $filtro;
 
 
 switch ($filtro) {
@@ -87,7 +87,7 @@ switch ($orden) {
             $stock = $producto['Stock'];
         ?>
             <div class="item-grid-productos">
-                <a href="?menu=producto&m=<?= $filtroRuta ?>&f=<?= $ordenFiltro ?>&item=<?= $id ?>">
+                <a href="?m=producto&m=<?= $filtroRuta ?>&f=<?= $ordenFiltro ?>&item=<?= $id ?>">
                     <h3 class="nombre-producto"><?= $nombre ?></h3>
                     <div class="imas">
                         <img class="img-grid-productos" src="img/productos/<?= $imagen ?>" alt="<?= $nombre ?>" />
@@ -107,8 +107,8 @@ switch ($orden) {
 <div class="piePagina">
     <div class="derecha">
         <form class="num_paginas--filtro" action="" method="GET">
-            <input type="hidden" name="menu" value="productos">
-            <!-- <input type="hidden" name="modulo" value="productos"> -->
+            <input type="hidden" name="m" value="productos">
+            <!-- <input type="hidden" name="mod" value="productos"> -->
             <input type="hidden" name="buscar" value="<?= $filtro ?>">
             <input type="hidden" name="orden" value="<?= $orden ?>">
             <select class="form-select" name="limite">

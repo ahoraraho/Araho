@@ -20,7 +20,7 @@ if (isset($_GET["mesage"])) {
 <div class="conten">
     <div class="center-small">
         <h1 class="form_title">Recuperar cuenta</h1>
-        <form action="?menu=resetRpta" method="post" class="form">
+        <form action="?m=resetRpta" method="post" class="form">
             <div class="form_group">
                 <input type="email" id="email" name="email" class="form_input" placeholder=" " required autofocus>
                 <label for="email" class="form_label"><i class="bi bi-envelope-paper"></i><span>Email</span><sup>*</sup></label>
@@ -31,6 +31,6 @@ if (isset($_GET["mesage"])) {
 			</div><br><br>
             <button type="submit" name="restaurar" id="restaurar" class="form_login">Validar datos</button>
         </form><br>
-        <a class="crear-cuenta" href="?menu=ingreso">ó, Iniciar Sesion</a><br>
+        <a class="crear-cuenta" href="?m=ingreso">ó, Iniciar Sesion</a><br>
     </div>
 </div>

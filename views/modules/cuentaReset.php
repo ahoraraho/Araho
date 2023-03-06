@@ -9,7 +9,7 @@ if (!isset($_SESSION["Usuario"])) {
 // recupero el id del usuario que inicio la sesion
 $id = $_SESSION["Usuario"]["Id"];
 
-// Valido que tipo de peticion invoca al modulo
+// Valido que tipo de peticion invoca al mod
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
     $email = $_POST["email"];
@@ -21,16 +21,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mj = "bug";
         if (!validarPassReset($id, $email, $oldPass)) {
             $mj = "nul";
-            //header('location: ?menu=panel&modulo=cuentaReset&msj=' . $mj);
+            //header('location: ?m=panel&mod=cuentaReset&msj=' . $mj);
         } elseif ($newPass != $passOk) {
             $mj = "nok";
         } else {
             if (ResetPassUsers($id, $email, $passOk)) {
                 $mj = "ok";
-                //header('location: ?menu=panel&modulo=cuentaReset&msj=' . $mj);
+                //header('location: ?m=panel&mod=cuentaReset&msj=' . $mj);
             }
         }
-        header('location: ?menu=panel&modulo=cuentaReset&msj=' . $mj);
+        header('location: ?m=panel&mod=cuentaReset&msj=' . $mj);
         //}
     }
 } else {
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- ruta de acceso guia -->
 <div class="ruta">
     <a href="./" title="Home"><i class="bi bi-house"></i> Home</a>
-    <a href="?menu=panel&modulo=cuenta" title="Ir al configuracion"><i class="bi bi-gear"></i> Configuración</a>
+    <a href="?m=panel&mod=cuenta" title="Ir al configuracion"><i class="bi bi-gear"></i> Configuración</a>
     <a href="#" title="Estas justo aqui" class="active"><i class="bi-gear-wide-connected"></i>Reset Pass</a>
 </div>
 <?php
@@ -74,7 +74,7 @@ if (isset($_GET['msj'])) {
 <div class="formularios">
     <div class="entradas">
         <h3>Cambio de contraseña</h3>
-        <form action="?menu=panel&modulo=cuentaReset" method="POST">
+        <form action="?m=panel&mod=cuentaReset" method="POST">
             <input type="hidden" name="id" value="<?= $id ?>">
             <!-- <input type="hidden" name="idCliente" value="<?= $idCliente ?>"> -->
             <input type="hidden" name="email" value="<?= $email ?>">

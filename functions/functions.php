@@ -21,13 +21,13 @@ function createPaginationLogueado($paginas_total, $pagina, $filtro, $orden, $lim
     if ($paginas_total > 1) {
         echo "<ul class='paginador'>";
         if ($pagina != 1) {
-            echo "<li><a href='?menu=panel&modulo=$modulo&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=" . ($pagina - 1) . "'><i class='bi bi-arrow-left-circle'></i></a></li>";
+            echo "<li><a href='?m=panel&mod=$modulo&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=" . ($pagina - 1) . "'><i class='bi bi-arrow-left-circle'></i></a></li>";
         }
         for ($i = 1; $i <= $paginas_total; $i++) {
-            echo "<li><a class='" . (($pagina == $i) ? 'active' : '') . "' href='?menu=panel&modulo=$modulo&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=$i'>$i</a></li>";
+            echo "<li><a class='" . (($pagina == $i) ? 'active' : '') . "' href='?m=panel&mod=$modulo&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=$i'>$i</a></li>";
         }
         if ($pagina != $paginas_total) {
-            echo "<li><a href='?menu=panel&modulo=$modulo&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=" . ($pagina + 1) . "'><i class='bi bi-arrow-right-circle'></i></a></li>";
+            echo "<li><a href='?m=panel&mod=$modulo&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=" . ($pagina + 1) . "'><i class='bi bi-arrow-right-circle'></i></a></li>";
         }
         echo "</ul>";
     }
@@ -36,7 +36,7 @@ function createPaginationLogueado($paginas_total, $pagina, $filtro, $orden, $lim
 function createPagination($paginas_total, $pagina, $filtro, $orden, $limite)
 {
     if ($paginas_total > 1) {
-        $base_url = "?menu=productos&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=";
+        $base_url = "?m=productos&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=";
         echo "<ul class='paginador'>";
         if ($pagina != 1) {
             echo "<li><a href='$base_url" . ($pagina - 1) . "'><i class='bi bi-arrow-left-circle'></i></a></li>";
@@ -115,5 +115,5 @@ function procesarAddCarrito($id, $idCliente)
         InsertCarrito($idCliente, $id, 1);
     }
     //alertaResponDialog("msj-ok", "Producto añadifo al carrito", "bi-check");
-    //header('location: ?menu=home&mesage=ok');
+    //header('location: ?m=home&mesage=ok');
 }

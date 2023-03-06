@@ -1,6 +1,6 @@
 <div class="fooo">
 	<div class="fooo_conten-terminos">
-		<a href="?menu=terminos">Terminos & Condiciones</a> 
+		<a href="?m=terminos">Terminos & Condiciones</a> 
 	</div>
 	<div class="fooo_conten-copy">
 		<p>

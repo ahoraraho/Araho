@@ -1,7 +1,7 @@
 <?php
 // Si es administrador no va a comprar
 if (isset($_SESSION["Usuario"]) && $_SESSION["Usuario"]["Administrador"] == 1) {
-	header('location: ?menu=panel&modulo=ventas');
+	header('location: ?m=panel&mod=ventas');
 }
 if (isset($_GET["mesage"])) {
 	$mesage = $_GET["mesage"];
@@ -22,7 +22,7 @@ if (isset($_GET["mesage"])) {
 <div class="cccc">
 	<div class="productos">
 		<h3>PRODUCTOS DESTACADOS </h3>
-		<a class="view-all" href="?menu=productos&buscar=destacados"> Ver todos</a>
+		<a class="view-all" href="?m=productos&buscar=destacados"> Ver todos</a>
 	</div><br>
 
 	<div class="grid-productos">
@@ -41,7 +41,7 @@ if (isset($_GET["mesage"])) {
 			$stock = $producto['Stock'];
 		?>
 			<div class="item-grid-productos">
-				<a href="?menu=producto&item=<?= $id ?>">
+				<a href="?m=producto&item=<?= $id ?>">
 					<h3 class="nombre-producto"><?= $nombre ?></h3>
 					<div class="imas">
 						<img loading="lazy" class="img-grid-productos" src="img/productos/<?= $imagen ?>" alt="<?= $nombre ?>" />
@@ -61,7 +61,7 @@ if (isset($_GET["mesage"])) {
 <div class="cccc">
 	<div class="productos">
 		<h3>ULTIMOS PRODUCTOS </h3>
-		<a class="view-all" href="?menu=productos&buscar=all"> Ver todos</a>
+		<a class="view-all" href="?m=productos&buscar=all"> Ver todos</a>
 	</div><br>
 	<div class="grid-productos">
 		<!-- Productos -->
@@ -77,7 +77,7 @@ if (isset($_GET["mesage"])) {
 			$stock = $producto['Stock'];
 		?>
 			<div class="item-grid-productos">
-				<a href="?menu=producto&item=<?= $id ?>">
+				<a href="?m=producto&item=<?= $id ?>">
 					<h3 class="nombre-producto"><?= $nombre ?></h3>
 					<div class="imas">
 						<img class="img-grid-productos" src="img/productos/<?= $imagen ?>" alt="<?= $nombre ?>" />
@@ -97,7 +97,7 @@ if (isset($_GET["mesage"])) {
 <div class="cccc">
 	<div class="productos">
 		<h3>TENDENCIA </h3>
-		<a class="view-all" href="?menu=productos&buscar=tendencia"> Ver todos</a>
+		<a class="view-all" href="?m=productos&buscar=tendencia"> Ver todos</a>
 	</div><br>
 	<div class="grid-productos">
 		<!-- Productos -->
@@ -113,7 +113,7 @@ if (isset($_GET["mesage"])) {
 			$stock = $producto['Stock'];
 		?>
 			<div class="item-grid-productos">
-				<a href="?menu=producto&item=<?= $id ?>">
+				<a href="?m=producto&item=<?= $id ?>">
 					<h3 class="nombre-producto"><?= $nombre ?></h3>
 					<div class="imas">
 						<img class="img-grid-productos" src="img/productos/<?= $imagen ?>" alt="<?= $nombre ?>" />

@@ -11,7 +11,7 @@ if (isset($_GET["action"])) {
     $action = "add";
 }
 
-// Valido que tipo de peticion invoca al modulo
+// Valido que tipo de peticion invoca al mod
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Aca se deben procesar los datos del formulario ejecutado
     $id = $_POST["id"];
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             break;
     }
-    header('location: ?menu=panel&modulo=marcas&msj=' . $msj);
+    header('location: ?m=panel&mod=marcas&msj=' . $msj);
 } else {
     // Preparar el formulario para: Agregar - Modificar - Eliminar
     switch ($action) {
@@ -104,7 +104,7 @@ switch ($btn) {
 ?>
 <div class="ruta">
     <a href="./" title="Home"><i class="bi bi-house"></i> Home</a>
-    <a href="?menu=panel&modulo=marcas" title="Ir a Marcas"><i class="bi bi-view-list"></i> Marcas</a>
+    <a href="?m=panel&mod=marcas" title="Ir a Marcas"><i class="bi bi-view-list"></i> Marcas</a>
     <a href="#" title="Estas justo aqui" class="active"><i class="<?= $icono ?>"></i> <?= $hacer ?></a>
 </div>
 <div class="formularios">
@@ -112,11 +112,11 @@ switch ($btn) {
         <h3>Marca</h3>
         <div class="main">
             <div class="formm">
-                <form action="?menu=panel&modulo=marca&action=<?= $action ?>" method="POST" enctype="multipart/form-data">
+                <form action="?m=panel&mod=marca&action=<?= $action ?>" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= $marca["idMarca"]; ?>">
                     <i class="bi bi-qr-code-scan"></i><span>Id Marca</span>
                     <input id="noEdid" title="No se puede modificar" disabled required type="text" name="Nombre" value="<?= $marca["idMarca"] ?>" <?= $status ?>>
-                    <i class="bi bi-menu-button-fill"></i><span>Nombre</span>
+                    <i class="bi bi-m-button-fill"></i><span>Nombre</span>
                     <input required type="text" name="Nombre" value="<?= $marca["Nombre"] ?>" <?= $status ?>>
 
                     <br><br>

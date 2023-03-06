@@ -8,7 +8,7 @@ if (isset($_POST['restaurar'])) {
         );
         $exiss = existMailUsuario($dataInput["mail"]); //USAMOS LA FUNCION
         if (!$exiss) {
-            header('location: ?menu=reset&mesage=noMail');
+            header('location: ?m=reset&mesage=noMail');
         }
         $dataUser = validarEmail($dataInput["mail"]);
         $dataReset = array(
@@ -22,9 +22,9 @@ if (isset($_POST['restaurar'])) {
         $_email = $data["Email"];
 
         if ($dataInput["mail"] != $_email) {
-            header('location: ?menu=reset&mesage=noMail');
+            header('location: ?m=reset&mesage=noMail');
         } elseif ($dataInput["phone"] != $_telefono) {
-            header('location: ?menu=reset&mesage=noPhone');
+            header('location: ?m=reset&mesage=noPhone');
         } else {
             alertaResponDialog("msj-info", "Email encontrado!", "bi-check-circle");
             $mensaje = "Restaurar contraseña del siguiente correo electronico: " . $_email;
@@ -45,7 +45,7 @@ if (isset($_POST['resetaPass'])) {
         if ($dir["Pass"] == $dir["PassOk"]) {
             if (ResetPassUsers($dir["Id"], $dir["Email"], $dir["PassOk"])) {
                 $mensaje = null;
-                header('location: ?menu=ingreso&mesage=resetOk');
+                header('location: ?m=ingreso&mesage=resetOk');
             }   
         } else {
             alertaResponDialog("msj-error", "Las contraseñas no coinciden",  "bi-exclamation-circle");
@@ -86,6 +86,6 @@ if (isset($_POST['resetaPass'])) {
             </div><br><br>
             <button type="submit" name="resetaPass" id="resetaPass" class="form_login">Restaurar contraseña</button>
         </form><br>
-        <a class="crear-cuenta" href="?menu=ingreso">ó, Iniciar Sesion</a><br>
+        <a class="crear-cuenta" href="?m=ingreso">ó, Iniciar Sesion</a><br>
     </div>
 </div>

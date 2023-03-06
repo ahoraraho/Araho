@@ -26,47 +26,47 @@ ninguna salida desde el script ( que no sean encabezados ), en su lugar el la sa
 					<?php
 					if (isset($_SESSION["Usuario"])) {
 						if ($_SESSION["Usuario"]["Administrador"]) { ?>
-							<li><a id="nonne" href="?menu=panel&modulo=ventas"><i class="bi-calendar2-event"></i><span>Ventas</span></a></li>
-							<li><a id="nonne" href="?menu=panel&modulo=productos"><i class="bi-box-seam"></i><span>Productos</span></a></li>
-							<li><a id="nonne" href="?menu=panel&modulo=categorias"><i class="bi-tags"></i><span>Categorias</span></a></li>
-							<li><a id="nonne" href="?menu=panel&modulo=marcas"><i class="bi-view-list"></i><span>Marcas</span></a></li>
-							<li><a id="nonne" href="?menu=panel&modulo=usuarios"><i class="bi bi-people"></i><span>Usuarios</span></a></li>
+							<li><a id="nonne" href="?m=panel&modulo=ventas"><i class="bi-calendar2-event"></i><span>Ventas</span></a></li>
+							<li><a id="nonne" href="?m=panel&modulo=productos"><i class="bi-box-seam"></i><span>Productos</span></a></li>
+							<li><a id="nonne" href="?m=panel&modulo=categorias"><i class="bi-tags"></i><span>Categorias</span></a></li>
+							<li><a id="nonne" href="?m=panel&modulo=marcas"><i class="bi-view-list"></i><span>Marcas</span></a></li>
+							<li><a id="nonne" href="?m=panel&modulo=usuarios"><i class="bi bi-people"></i><span>Usuarios</span></a></li>
 						<?php } else { ?>
-							<li class="nav-main"> <a href="?menu=ubicacion"><i class="bi bi-pin-map-fill"></i><span>Ubicacion</span></a> </li>
-							<li class="nav-main"> <a href="?menu=contacto"><i class="bi bi-chat-left-text"></i><span>Contacto</span></a> </li>
-							<li class="nav-main"> <a href="?menu=nosotros"><i class="bi bi-text-indent-left"></i><span>Nosotros</span></a> </li>
-							<li><a id="nonne" href="?menu=panel&modulo=compras"><i class="bi bi-handbag"></i><span>Compras</span></a></li>
+							<li class="nav-main"> <a href="?m=ubicacion"><i class="bi bi-pin-map-fill"></i><span>Ubicacion</span></a> </li>
+							<li class="nav-main"> <a href="?m=contacto"><i class="bi bi-chat-left-text"></i><span>Contacto</span></a> </li>
+							<li class="nav-main"> <a href="?m=nosotros"><i class="bi bi-text-indent-left"></i><span>Nosotros</span></a> </li>
+							<li><a id="nonne" href="?m=panel&modulo=compras"><i class="bi bi-handbag"></i><span>Compras</span></a></li>
 							<li class="nav-main"><a href="#"><i class="bi bi-tags"></i><span>Categorias</span></a>
 								<ul class="nav-lista Show">
 									<?php
 									$categorias = selectCategorias();
 									foreach ($categorias as $categoria) {
 										$nombre = $categoria["Nombre"]; ?>
-										<li> <a href="?menu=productos&buscar=categorias&categoria=<?= $nombre ?>"><span><?= $nombre ?></span></a></li>
+										<li> <a href="?m=productos&buscar=categorias&categoria=<?= $nombre ?>"><span><?= $nombre ?></span></a></li>
 									<?php } ?>
 								</ul>
 							</li>
 						<?php } ?>
-						<li><a id="nonne" href="?menu=panel&modulo=cuenta"><i class="bi-gear"></i><span>Configuracion</span></a></li>
+						<li><a id="nonne" href="?m=panel&modulo=cuenta"><i class="bi-gear"></i><span>Configuracion</span></a></li>
 						<div class="separado"></div>
-						<li><a id="nonne" href="?menu=panel&sesion=cerrar"><i class="bi-power"></i><span>Cerrar sesión</span></a></li>
+						<li><a id="nonne" href="?m=panel&sesion=cerrar"><i class="bi-power"></i><span>Cerrar sesión</span></a></li>
 					<?php } else { ?>
-						<li class="nav-main"> <a href="?menu=ubicacion"><i class="bi bi-pin-map-fill"></i><span>Ubicacion</span></a> </li>
-						<li class="nav-main"> <a href="?menu=contacto"><i class="bi bi-chat-left-text"></i><span>Contacto</span></a> </li>
-						<li class="nav-main"> <a href="?menu=nosotros"><i class="bi bi-text-indent-left"></i><span>Nosotros</span></a></li>
+						<li class="nav-main"> <a href="?m=ubicacion"><i class="bi bi-pin-map-fill"></i><span>Ubicacion</span></a> </li>
+						<li class="nav-main"> <a href="?m=contacto"><i class="bi bi-chat-left-text"></i><span>Contacto</span></a> </li>
+						<li class="nav-main"> <a href="?m=nosotros"><i class="bi bi-text-indent-left"></i><span>Nosotros</span></a></li>
 						<li class="nav-main"><a href="#"><i class="bi bi-tags"></i><span>Categorias</span></a>
 							<ul class="nav-lista Show">
 								<?php
 								$categorias = selectCategorias();
 								foreach ($categorias as $categoria) {
 									$nombre = $categoria["Nombre"]; ?>
-									<li> <a href="?menu=productos&buscar=categorias&categoria=<?= $nombre ?>"><span><?= $nombre ?></span></a></li>
+									<li> <a href="?m=productos&buscar=categorias&categoria=<?= $nombre ?>"><span><?= $nombre ?></span></a></li>
 								<?php } ?>
 							</ul>
 						</li>
 						<div class="inicios">
-							<li> <a id="nonne" href="?menu=ingreso"><button class="btn-ingreso">Sing In</button></a> </li>
-							<li> <a id="nonne" href="?menu=registro"><button class="btn-registro">Sign Up</button> </a> </li>
+							<li> <a id="nonne" href="?m=ingreso"><button class="btn-ingreso">Sing In</button></a> </li>
+							<li> <a id="nonne" href="?m=registro"><button class="btn-registro">Sign Up</button> </a> </li>
 						</div>
 					<?php } ?>
 				</ul>
@@ -75,7 +75,7 @@ ninguna salida desde el script ( que no sean encabezados ), en su lugar el la sa
 			<?php if (!isset($_SESSION["Usuario"]) || $_SESSION["Usuario"]["Administrador"] == 0) { ?>
 				<div class="carrito">
 					<li>
-						<a href="?menu=carrito" title="Carrito">
+						<a href="?m=carrito" title="Carrito">
 							<div class="icone">
 								<i class="bi-cart2" id="card"></i>
 							</div>
@@ -105,8 +105,8 @@ ninguna salida desde el script ( que no sean encabezados ), en su lugar el la sa
 				</div>
 				<div class="search-field">
 					<form class="busqueda" action="" method="GET">
-						<!-- para agregar la vista de ?menu=productos en la url -->
-						<input type="hidden" name="menu" value="productos">
+						<!-- para agregar la vista de ?m=productos en la url -->
+						<input type="hidden" name="m" value="productos">
 						<!-- concatenando el valor a buscar -->
 						<input type="text" id="inputBusqueda" list="categorias-list" name="buscar" placeholder="Buscar..." required>
 						<i onclick="limpiarBusqueda()" id="clearIcon" class="bi-x"></i>
@@ -125,13 +125,13 @@ ninguna salida desde el script ( que no sean encabezados ), en su lugar el la sa
 			<div class="person">
 				<?php if (!isset($_SESSION["Usuario"])) { ?>
 					<div class="btn-user">
-						<a href="?menu=ingreso">
+						<a href="?m=ingreso">
 							<i class="bi bi-person"></i>
 						</a>
 					</div>
 				<?php } else { ?>
 					<div class="btn-user">
-						<a href="?menu=panel<?= ($_SESSION["Usuario"]["Administrador"]) ? '&modulo=ventas' : '&modulo=compras'; ?>">
+						<a href="?m=panel<?= ($_SESSION["Usuario"]["Administrador"]) ? '&modulo=ventas' : '&modulo=compras'; ?>">
 							<i class="bi bi-person-gear"></i>
 							<span><?= $_SESSION["Usuario"]["Nombre"]; ?></span>
 						</a>

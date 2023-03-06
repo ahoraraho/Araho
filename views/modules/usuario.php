@@ -11,7 +11,7 @@ if (isset($_GET["action"])) {
     $action = "add";
 }
 
-// Valido que tipo de peticion invoca al modulo
+// Valido que tipo de peticion invoca al mod
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Aca se deben procesar los datos del formulario ejecutado
     $id = $_POST['id'];
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             break;
     }
-    header('location: ?menu=panel&modulo=usuarios&msj=' . $msj);
+    header('location: ?m=panel&mod=usuarios&msj=' . $msj);
 } else {
     // Preparar el formulario para: Agregar - Modificar - Eliminar
     switch ($action) {
@@ -113,7 +113,7 @@ switch ($btn) {
 ?>
 <div class="ruta">
     <a href="./" title="Home"><i class="bi bi-house"></i> Home</a>
-    <a href="?menu=panel&modulo=usuarios" title="Ir a Usuarios"><i class="bi bi-people"></i> Usuarios</a>
+    <a href="?m=panel&mod=usuarios" title="Ir a Usuarios"><i class="bi bi-people"></i> Usuarios</a>
     <a href="#" title="Estas justo aqui" class="active"><i class="<?= $icono ?>"></i> <?= $hacer ?></a>
 </div>
 
@@ -122,7 +122,7 @@ switch ($btn) {
         <h3>Usuario</h3>
         <div class="main">
             <div class="formm">
-                <form action="?menu=panel&modulo=usuario&action=<?= $action ?>" method="POST" enctype="multipart/form-data">
+                <form action="?m=panel&mod=usuario&action=<?= $action ?>" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= $cliente_usuario["id"]; ?>">
                     <i class="bi bi-qr-code"></i><span>Id Usuario</span>
                     <input class="noEdid" title="Edicion no permitida" required type="text" name="Nombre" value="<?= $cliente_usuario["id"]; ?>" <?= $status ?>>

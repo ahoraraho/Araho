@@ -119,7 +119,7 @@ if (isset($_GET['msj'])) {
                     <td><?= $telefono ?></td>
                     <td><?= $email ?></td>
                     <td>
-                        <a href="?menu=panel&modulo=usuario&action=update&id=<?= $id ?>" title="Ver"><i class="edid bi-binoculars"><b> </i></a>
+                        <a href="?m=panel&mod=usuario&action=update&id=<?= $id ?>" title="Ver"><i class="edid bi-binoculars"><b> </i></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -129,8 +129,8 @@ if (isset($_GET['msj'])) {
 <div class="piePagina">
     <div class="derecha">
         <form class="num_paginas--filtro" action="" method="GET">
-            <input type="hidden" name="menu" value="panel">
-            <input type="hidden" name="modulo" value="usuarios">
+            <input type="hidden" name="m" value="panel">
+            <input type="hidden" name="mod" value="usuarios">
             <input type="hidden" name="buscar" value="<?= $filtro ?>">
             <input type="hidden" name="orden" value="<?= $orden ?>">
             <select class="form-select" name="limite">

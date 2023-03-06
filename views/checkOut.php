@@ -6,7 +6,7 @@ if (!isset($_SESSION["Usuario"])) {
 
     // Si es administrador no va a comprar
     if ($_SESSION["Usuario"]["Administrador"] == 1) {
-        header('location: ?menu=panel&modulo=ventas');
+        header('location: ?m=panel&mod=ventas');
         die();
     }
 
@@ -28,7 +28,7 @@ if (!isset($_SESSION["Usuario"])) {
                     } else {
                         alertaResponDialog("msj-error", "Hubo un error al intentar comprar. Por favor intente más tarde", "bi-wrench-adjustable-circle");
                     }
-                    header('location: ?menu=checkOutRta');
+                    header('location: ?m=checkOutRta');
                 } else {
                     alertaResponDialog("msj-error", "No se puede comprar porque no hay stock", "bi-wrench-adjustable-circle");
                 }

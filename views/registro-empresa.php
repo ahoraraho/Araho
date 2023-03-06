@@ -19,7 +19,7 @@ if (isset($_POST["registrar"])) {
 		if (!existMailUsuario($_POST["email"])) {
 			if (insertUsuario(1, $usuario)) {
 				// insertado correctamente
-				header('location: ?menu=ingreso&mesage=ok');
+				header('location: ?m=ingreso&mesage=ok');
 				//alertaResponDialog("msj-ok", "Gracias por registrarte! Bienvenido!", "bi-check-circle");
 			} else {
 				// error!!
@@ -27,7 +27,7 @@ if (isset($_POST["registrar"])) {
 			}
 		} else {
 			// mail ya existe
-			header('location: ?menu=ingreso&mesage=nok');
+			header('location: ?m=ingreso&mesage=nok');
 		}
 	} else {
 		//$resultado = "Se han aceptado las condiciones correctamente";
@@ -73,14 +73,14 @@ if (isset($_POST["registrar"])) {
 					echo "<div class='resultado'>" . $resultado . "</div>";
 				}
 				?>
-				<label class="control control-checkbox <?= $coo ?>"> I agree the <a target="_blank" href="?menu=terminos">Terms and Conditions </a>
+				<label class="control control-checkbox <?= $coo ?>"> I agree the <a target="_blank" href="?m=terminos">Terms and Conditions </a>
 					<input type="checkbox" id="checkbox" name="checkbox">
 					<div class="control_indicator "></div>
 				</label>
 			</div>
 			<button type="submit" name="registrar" id="registrar" class="form_singup-disabled">Register company</button>
 		</form><br>
-		<a class="crear-cuenta" href="?menu=ingreso">Iniciar Sesion</a><br>
-		<a class="crear-cuenta" href="?menu=registro">Crear una cuenta personal</a>
+		<a class="crear-cuenta" href="?m=ingreso">Iniciar Sesion</a><br>
+		<a class="crear-cuenta" href="?m=registro">Crear una cuenta personal</a>
 	</div>
 </div>

@@ -2,13 +2,13 @@
 
 // Si es administrador no va a comprar
 if (isset($_SESSION["Usuario"]) && $_SESSION["Usuario"]["Administrador"] == 1) {
-	header('location: ?menu=panel&modulo=ventas');
+	header('location: ?m=panel&mod=ventas');
 }
 // Valido que tipo de petición invoca al módulo
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// Compruebo si se inició sesión
 	if (!isset($_SESSION["Usuario"])) {
-		header('location: ?menu=ingreso');
+		header('location: ?m=ingreso');
 		die();
 	}
 	$id = $_POST["id"];

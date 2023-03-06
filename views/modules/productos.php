@@ -16,11 +16,11 @@ $cantidad_productos = countProductos($filtro);
 
 $paginas_total = ceil($cantidad_productos / $limite);
 
-$urlProductos = "?menu=panel&modulo=productos";
+$urlProductos = "?m=panel&mod=productos";
 
-$urlProductosFiltrado = "?menu=panel&modulo=productos&limite=" . $limite . "&pag=" . $pagina . "&buscar=" . $filtro;
+$urlProductosFiltrado = "?m=panel&mod=productos&limite=" . $limite . "&pag=" . $pagina . "&buscar=" . $filtro;
 
-$urlProductosFiltradoOrden = "?menu=panel&modulo=productos&limite=" . $limite . "&orden=" . $orden . "&pag=" . $pagina . "&buscar=" . $filtro;
+$urlProductosFiltradoOrden = "?m=panel&mod=productos&limite=" . $limite . "&orden=" . $orden . "&pag=" . $pagina . "&buscar=" . $filtro;
 
 ?>
 <!-- ruta de acceso guia -->
@@ -38,13 +38,13 @@ if (isset($_GET["action"])) {
     switch ($action) {
         case 'destacado':
             UpdateProductoDestacado($id, '1');
-            //header('location: ?menu=panel&modulo=productos');
+            //header('location: ?m=panel&mod=productos');
             alertaResponDialog("msj-ok", "Producto destacado", "bi-check-circle");
             break;
 
         case 'noDestacado':
             UpdateProductoDestacado($id, '0');
-            //header('location: ?menu=panel&modulo=productos');
+            //header('location: ?m=panel&mod=productos');
             alertaResponDialog("msj-warning", "Producto no destacado", "bi-exclamation-circle");
             break;
     }
@@ -128,9 +128,9 @@ if (isset($_GET['msj'])) {
 
     <div class="f1">
         <form class="from_input" action="" method="GET">
-            <!-- para agregar la vista de ?menu=productos en la url -->
-            <input type="hidden" name="menu" value="panel">
-            <input type="hidden" name="modulo" value="productos">
+            <!-- para agregar la vista de ?m=productos en la url -->
+            <input type="hidden" name="m" value="panel">
+            <input type="hidden" name="mod" value="productos">
             <!-- concatenando el valor a buscar -->
             <input type="text" name="buscar" placeholder="Buscar?todos...">
             <!-- <input type="submit" value="BUSCAR"> -->
@@ -161,13 +161,13 @@ if (isset($_GET['msj'])) {
                 <a class="btn_filtrador " href="<?= $urlProductosFiltrado ?>&orden=a-z" title="Filtrar A - Z"><i class="bi-sort-alpha-down-alt"></i></a>
             <?php } ?>
         </div>
-        <a href="?menu=panel&modulo=producto&action=add" class="button-link f-e">
+        <a href="?m=panel&mod=producto&action=add" class="button-link f-e">
             <i class="abi bi bi-plus-square"></i><span>Nuevo producto</span>
         </a>
         <div class="formFiltro"><!--formulario escondido-->
             <form class="btn-filtro-alfabeto" action="" method="GET">
-                <input type="hidden" name="menu" value="panel">
-                <input type="hidden" name="modulo" value="productos">
+                <input type="hidden" name="m" value="panel">
+                <input type="hidden" name="mod" value="productos">
                 <input type="hidden" name="buscar" value="<?= $filtro ?>">
                 <input type="hidden" id="orden" name="orden" value="z-a">
                 <button onclick="filtrardorAlfabeto()" title="Filtro de Alfabeto" class="btn-filtro" type="submit">
@@ -175,8 +175,8 @@ if (isset($_GET['msj'])) {
                 </button>
             </form>
             <form class="btn-filtro-precio" action="" method="GET">
-                <input type="hidden" name="menu" value="panel">
-                <input type="hidden" name="modulo" value="productos">
+                <input type="hidden" name="m" value="panel">
+                <input type="hidden" name="mod" value="productos">
                 <input type="hidden" name="buscar" value="<?= $filtro ?>">
                 <input type="hidden" id="orden" name="orden" value="menor-precio">
                 <button onclick="filtrardorPrecio()" title="Filtro del Precio" class="btn-filtro" type="submit">
@@ -243,8 +243,8 @@ if (isset($_GET['msj'])) {
                         <input type="checkbox" <?= $status ?> name="status" value="destacado" id="destacado">
                     </td>
                     <td>
-                        <a href="?menu=panel&modulo=producto&action=update&id=<?= $id ?>" title="Modificar"><i class="edid bi-pencil-square" ><b> </i></a>
-                        <a href="?menu=panel&modulo=producto&action=delete&id=<?= $id ?>" title="Eliminar"><i class="delete bi-trash" ><b></i></a>
+                        <a href="?m=panel&mod=producto&action=update&id=<?= $id ?>" title="Modificar"><i class="edid bi-pencil-square" ><b> </i></a>
+                        <a href="?m=panel&mod=producto&action=delete&id=<?= $id ?>" title="Eliminar"><i class="delete bi-trash" ><b></i></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -255,8 +255,8 @@ if (isset($_GET['msj'])) {
 <div class="piePagina">
     <div class="derecha">
         <form class="num_paginas--filtro" action="" method="GET">
-            <input type="hidden" name="menu" value="panel">
-            <input type="hidden" name="modulo" value="productos">
+            <input type="hidden" name="m" value="panel">
+            <input type="hidden" name="mod" value="productos">
             <input type="hidden" name="buscar" value="<?= $filtro ?>">
             <input type="hidden" name="orden" value="<?= $orden ?>">
             <select class="form-select" name="limite">
