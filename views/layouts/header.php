@@ -26,16 +26,16 @@ ninguna salida desde el script ( que no sean encabezados ), en su lugar el la sa
 					<?php
 					if (isset($_SESSION["Usuario"])) {
 						if ($_SESSION["Usuario"]["Administrador"]) { ?>
-							<li><a id="nonne" href="?m=panel&modulo=ventas"><i class="bi-calendar2-event"></i><span>Ventas</span></a></li>
-							<li><a id="nonne" href="?m=panel&modulo=productos"><i class="bi-box-seam"></i><span>Productos</span></a></li>
-							<li><a id="nonne" href="?m=panel&modulo=categorias"><i class="bi-tags"></i><span>Categorias</span></a></li>
-							<li><a id="nonne" href="?m=panel&modulo=marcas"><i class="bi-view-list"></i><span>Marcas</span></a></li>
-							<li><a id="nonne" href="?m=panel&modulo=usuarios"><i class="bi bi-people"></i><span>Usuarios</span></a></li>
+							<li><a id="nonne" href="?m=panel&mod=ventas"><i class="bi-calendar2-event"></i><span>Ventas</span></a></li>
+							<li><a id="nonne" href="?m=panel&mod=productos"><i class="bi-box-seam"></i><span>Productos</span></a></li>
+							<li><a id="nonne" href="?m=panel&mod=categorias"><i class="bi-tags"></i><span>Categorias</span></a></li>
+							<li><a id="nonne" href="?m=panel&mod=marcas"><i class="bi-view-list"></i><span>Marcas</span></a></li>
+							<li><a id="nonne" href="?m=panel&mod=usuarios"><i class="bi bi-people"></i><span>Usuarios</span></a></li>
 						<?php } else { ?>
 							<li class="nav-main"> <a href="?m=ubicacion"><i class="bi bi-pin-map-fill"></i><span>Ubicacion</span></a> </li>
 							<li class="nav-main"> <a href="?m=contacto"><i class="bi bi-chat-left-text"></i><span>Contacto</span></a> </li>
 							<li class="nav-main"> <a href="?m=nosotros"><i class="bi bi-text-indent-left"></i><span>Nosotros</span></a> </li>
-							<li><a id="nonne" href="?m=panel&modulo=compras"><i class="bi bi-handbag"></i><span>Compras</span></a></li>
+							<li><a id="nonne" href="?m=panel&mod=compras"><i class="bi bi-handbag"></i><span>Compras</span></a></li>
 							<li class="nav-main"><a href="#"><i class="bi bi-tags"></i><span>Categorias</span></a>
 								<ul class="nav-lista Show">
 									<?php
@@ -47,7 +47,7 @@ ninguna salida desde el script ( que no sean encabezados ), en su lugar el la sa
 								</ul>
 							</li>
 						<?php } ?>
-						<li><a id="nonne" href="?m=panel&modulo=cuenta"><i class="bi-gear"></i><span>Configuracion</span></a></li>
+						<li><a id="nonne" href="?m=panel&mod=cuenta"><i class="bi-gear"></i><span>Configuracion</span></a></li>
 						<div class="separado"></div>
 						<li><a id="nonne" href="?m=panel&sesion=cerrar"><i class="bi-power"></i><span>Cerrar sesión</span></a></li>
 					<?php } else { ?>
@@ -131,7 +131,7 @@ ninguna salida desde el script ( que no sean encabezados ), en su lugar el la sa
 					</div>
 				<?php } else { ?>
 					<div class="btn-user">
-						<a href="?m=panel<?= ($_SESSION["Usuario"]["Administrador"]) ? '&modulo=ventas' : '&modulo=compras'; ?>">
+						<a href="?m=panel<?= ($_SESSION["Usuario"]["Administrador"]) ? '&mod=ventas' : '&mod=compras'; ?>">
 							<i class="bi bi-person-gear"></i>
 							<span><?= $_SESSION["Usuario"]["Nombre"]; ?></span>
 						</a>

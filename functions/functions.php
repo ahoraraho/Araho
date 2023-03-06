@@ -16,18 +16,18 @@ function alertaResponDialog($typeMesaje, $mesaje, $icono1)
 }
 
 
-function createPaginationLogueado($paginas_total, $pagina, $filtro, $orden, $limite, $modulo)
+function createPaginationLogueado($paginas_total, $pagina, $filtro, $orden, $limite, $mod)
 {
     if ($paginas_total > 1) {
         echo "<ul class='paginador'>";
         if ($pagina != 1) {
-            echo "<li><a href='?m=panel&mod=$modulo&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=" . ($pagina - 1) . "'><i class='bi bi-arrow-left-circle'></i></a></li>";
+            echo "<li><a href='?m=panel&mod=$mod&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=" . ($pagina - 1) . "'><i class='bi bi-arrow-left-circle'></i></a></li>";
         }
         for ($i = 1; $i <= $paginas_total; $i++) {
-            echo "<li><a class='" . (($pagina == $i) ? 'active' : '') . "' href='?m=panel&mod=$modulo&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=$i'>$i</a></li>";
+            echo "<li><a class='" . (($pagina == $i) ? 'active' : '') . "' href='?m=panel&mod=$mod&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=$i'>$i</a></li>";
         }
         if ($pagina != $paginas_total) {
-            echo "<li><a href='?m=panel&mod=$modulo&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=" . ($pagina + 1) . "'><i class='bi bi-arrow-right-circle'></i></a></li>";
+            echo "<li><a href='?m=panel&mod=$mod&buscar=$filtro&limite=$limite" . (($orden == '') ? '' : '&order=' . $orden) . "&pag=" . ($pagina + 1) . "'><i class='bi bi-arrow-right-circle'></i></a></li>";
         }
         echo "</ul>";
     }
